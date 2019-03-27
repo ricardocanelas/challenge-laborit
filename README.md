@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ![screengrab](screengrab.png)
 
-👁️‍🗨️ Live: [https://ricardocanelas.github.io/challenge-laborit](https://ricardocanelas.github.io/challenge-laborit)
+👁 Live: [https://ricardocanelas.github.io/challenge-laborit](https://ricardocanelas.github.io/challenge-laborit)
 
 ## Getting Started
 
