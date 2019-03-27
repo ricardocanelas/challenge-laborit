@@ -1,0 +1,37 @@
+{
+  "name": "challenge-laborit",
+  "version": "0.1.0",
+  "author": "Ricardo Canelas",
+  "homepage": "https://ricardocanelas.github.io/challenge-laborit",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint src --max-warnings 0 --format codeframe",
+    "lint:fix": "eslint src --fix",
+    "deploy": "npm run build && gh-pages -d build",
+    "deploy:cleanup": "rm -rf node_modules/gh-pages/.cache"
+  },
+  "dependencies": {
+    "node-sass": "^4.11.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-icons": "^3.5.0",
+    "react-scripts": "2.1.8"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

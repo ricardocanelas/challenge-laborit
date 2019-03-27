@@ -1,0 +1,362 @@
+// ITCSS Architecture + RSCSS
+// https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
+// https://github.com/rbezerra/rscss-pt-br
+
+/******************
+ * SEETINGS
+ * config, global
+ ******************/
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,700");
+
+$spacing-unit: 16px;
+
+/************
+ * TOOLS
+ * mixins
+ ************/
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    display: table; // 2
+    content: " "; // 1
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin label {
+  color: white;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: normal;
+  padding: 0 0 6px 0;
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@mixin animate-rotate {
+  animation: rotate 1.6s infinite linear;
+}
+
+/*******************************
+ * GENERIC
+ * reset, shared, normalize
+ *******************************/
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dd,
+ol,
+ul,
+form,
+fieldset,
+legend,
+figure,
+table,
+th,
+td,
+caption,
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/********************************************************
+ * ELEMENTS
+ * headings, form, table, hr, lists, page, quotes, etc
+ ********************************************************/
+
+body {
+  font-family: "Poppins", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  background-color: #a066af;
+  background: linear-gradient(
+    92.56deg,
+    #a066af 2.39%,
+    rgba(34, 72, 118, 0.867403) 82%
+  );
+}
+
+hr {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0px -1px 1px rgba(36, 27, 39, 0.3);
+  width: 100%;
+  height: 1px;
+  padding: 0;
+  margin: 25px 0 20px 0;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #6d6d6d;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0 3px;
+  border-collapse: separate;
+  thead {
+    tr {
+      background: #ffffff;
+      border-radius: 4px;
+      th:first-child {
+        border-radius: 4px 0px 0px 4px;
+      }
+      th:last-child {
+        border-radius: 0px 4px 4px 0px;
+      }
+      th {
+        text-align: left;
+        padding: 5px 8px;
+        font-size: 14px;
+      }
+    }
+  }
+  tbody {
+    tr {
+      border: 0;
+      margin: 5px;
+      background: rgba(255, 255, 255, 0.2);
+      &:hover {
+        background: rgba(255, 255, 255, 0.4);
+      }
+      td:first-child {
+        border-radius: 4px 0px 0px 4px;
+      }
+      td:last-child {
+        border-radius: 0px 4px 4px 0px;
+      }
+      td {
+        text-align: left;
+        padding: 5px 8px;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+/*******************************************************
+ * OBJECTS
+ * layout, animations, list-bare, media, overlays, etc
+ *******************************************************/
+
+#root > .wrapper {
+  width: 100%;
+  height: 100%;
+  max-width: 764px;
+  margin: 32px auto 32px auto;
+
+  > .logo {
+    margin: 0 0 30px 0;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: normal;
+    color: #ffffff;
+  }
+}
+
+.by {
+  text-align: center;
+  margin: 32px 0 0 0;
+  a,
+  a:visited {
+    font-size: 12px;
+    text-decoration: none;
+    color: rgba(8, 6, 6, 0.3);
+    &:hover {
+      color: rgba(8, 6, 6, 0.8);
+    }
+  }
+}
+
+.animate {
+  &.rotate {
+    @include animate-rotate;
+  }
+}
+
+/***********************************************
+ * COMPONENTS
+ * buttons, messages, modal, 404, header, etc
+ ***********************************************/
+
+.dropdowns {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-grow: 1;
+  > .dropdown {
+    width: 100%;
+
+    // collapsing margins
+    & + .dropdown {
+      margin-left: 25px;
+    }
+    > .label {
+      @include label;
+    }
+  }
+}
+
+.vehicle {
+  width: 100%;
+  &.notfound {
+    opacity: 0.5;
+  }
+  &.loading {
+    text-align: center;
+    color: white;
+    span {
+      font-size: 12px;
+    }
+  }
+
+  > .label {
+    @include label;
+  }
+
+  > .container {
+    position: relative;
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    min-height: 150px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+
+    > .body {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      margin: 0 0 16px 0;
+
+      .brand {
+        font-size: 19px;
+        font-weight: bold;
+      }
+      .model {
+        font-size: 14px;
+        font-weight: normal;
+        color: #8a8a8a;
+      }
+      .price {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: right;
+      }
+      .ref {
+        font-size: 13px;
+        font-weight: normal;
+        color: #8a8a8a;
+        text-align: right;
+      }
+    }
+
+    > .footer {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      div {
+        display: inline-block;
+      }
+      .fipe {
+        font-size: 13px;
+        font-weight: normal;
+        color: #8a8a8a;
+        text-transform: uppercase;
+      }
+      .favourite {
+        cursor: pointer;
+        padding: 0 3px;
+      }
+      .favourite:hover {
+        box-shadow: 0px -1px 1px rgba(167, 167, 167, 0.3);
+      }
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: #6f629b;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-size: 12px;
+      margin: 0 6px 0 0;
+    }
+  }
+}
+
+.favourite-list {
+  > .label {
+    @include label;
+  }
+}
+
+/***********************************************
+ * TRUMPS
+ ***********************************************/
+
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-justify {
+  text-align: justify;
+}
+
+.clearfix {
+  @include clearfix;
+}
