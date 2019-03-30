@@ -56,7 +56,13 @@ class App extends Component {
       case 'vehicle_fetched':
         return {
           ...currentState,
-          vehicle: { data: action.payload, status: 'loaded' },
+          vehicle: {
+            data: {
+              ...action.payload,
+              id: `${currentState.brands.selected}-${currentState.models.selected}-${currentState.years.selected}`,
+            },
+            status: 'loaded',
+          },
         };
       case 'brands_selected':
         return {
@@ -90,7 +96,7 @@ class App extends Component {
       case 'favourite_removed':
         return {
           ...currentState,
-          favourites: [...currentState.favourites.filter(item => item.CodigoFipe !== action.payload.CodigoFipe)],
+          favourites: [...currentState.favourites.filter(item => item.id !== action.payload.id)],
         }
       default:
         return currentState;
@@ -136,7 +142,7 @@ class App extends Component {
 
   render() {
     const { brands, models, years, vehicle, favourites } = this.state;
-    const isFavourite = vehicle.status === 'loaded' ? (favourites.find(item => item.CodigoFipe === vehicle.data.CodigoFipe) ? true : false) : false;
+    const isFavourite = vehicle.status === 'loaded' ? (favourites.find(item => item.id === vehicle.data.id) ? true : false) : false;
 
     return (
       <div className="wrapper">

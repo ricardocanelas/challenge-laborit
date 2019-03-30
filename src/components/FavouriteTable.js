@@ -17,7 +17,7 @@ const FavouriteTable = (props) => {
             <tr><td colSpan='3' className='text-center'>- sem favoritos -</td></tr>
           )}
           {props.data.map(item =>
-            <tr key={item.CodigoFipe} data={item}>
+            <tr key={item.id} data={item}>
               <td>{item.Marca}</td>
               <td>{item.Modelo} ({item.AnoModelo})</td>
               <td>{item.Valor}</td>
