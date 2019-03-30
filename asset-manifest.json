@@ -1,13 +1,13 @@
 {
   "main.css": "/challenge-laborit/static/css/main.f17b5cc7.chunk.css",
-  "main.js": "/challenge-laborit/static/js/main.518b75cd.chunk.js",
-  "main.js.map": "/challenge-laborit/static/js/main.518b75cd.chunk.js.map",
+  "main.js": "/challenge-laborit/static/js/main.aaf9f002.chunk.js",
+  "main.js.map": "/challenge-laborit/static/js/main.aaf9f002.chunk.js.map",
   "runtime~main.js": "/challenge-laborit/static/js/runtime~main.9ee83c8c.js",
   "runtime~main.js.map": "/challenge-laborit/static/js/runtime~main.9ee83c8c.js.map",
   "static/js/2.3dc9270c.chunk.js": "/challenge-laborit/static/js/2.3dc9270c.chunk.js",
   "static/js/2.3dc9270c.chunk.js.map": "/challenge-laborit/static/js/2.3dc9270c.chunk.js.map",
   "index.html": "/challenge-laborit/index.html",
-  "precache-manifest.a40547747e7544b58879fd6eddc2b2d0.js": "/challenge-laborit/precache-manifest.a40547747e7544b58879fd6eddc2b2d0.js",
+  "precache-manifest.3a5ce5da3152ca92308a56be3b97bf3b.js": "/challenge-laborit/precache-manifest.3a5ce5da3152ca92308a56be3b97bf3b.js",
   "service-worker.js": "/challenge-laborit/service-worker.js",
   "static/css/main.f17b5cc7.chunk.css.map": "/challenge-laborit/static/css/main.f17b5cc7.chunk.css.map"
 }

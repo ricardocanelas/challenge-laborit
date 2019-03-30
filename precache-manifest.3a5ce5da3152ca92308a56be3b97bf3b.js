@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/challenge-laborit/static/js/runtime~main.9ee83c8c.js"
   },
   {
-    "revision": "5f7f2164290444d9d02c",
-    "url": "/challenge-laborit/static/js/main.518b75cd.chunk.js"
+    "revision": "f47a5b8e19549095e1c3",
+    "url": "/challenge-laborit/static/js/main.aaf9f002.chunk.js"
   },
   {
     "revision": "08a88c21e35f2f8c42ff",
     "url": "/challenge-laborit/static/js/2.3dc9270c.chunk.js"
   },
   {
-    "revision": "5f7f2164290444d9d02c",
+    "revision": "f47a5b8e19549095e1c3",
     "url": "/challenge-laborit/static/css/main.f17b5cc7.chunk.css"
   },
   {
-    "revision": "48577a18c8b28e23ddc7a92aa27f0917",
+    "revision": "0555d29eddd5e1482dcec09dcc9d5b6c",
     "url": "/challenge-laborit/index.html"
   }
 ];

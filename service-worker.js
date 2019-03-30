@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/challenge-laborit/precache-manifest.a40547747e7544b58879fd6eddc2b2d0.js"
+  "/challenge-laborit/precache-manifest.3a5ce5da3152ca92308a56be3b97bf3b.js"
 );
 
 workbox.clientsClaim();
